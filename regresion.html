@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Precios de casas</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://y-roan.vercel.app/">Clasificación de vinos <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+    </nav>
+    <div class="container">
+        <h1 style="text-align: center;"> Regresión Precios de Casas MLP</h1>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+
+
+                            <div class="form row">
+                                <div class="form-group col-md-4">
+                                    <label for=" valor1"> valor1</label>
+                                    <input type="number" class="form-control" id="valor1" placeholder="valor1">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=" valor2"> valor2</label>
+                                    <input type="number" class="form-control" id="valor2" placeholder="valor2">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="valor3"> valor3</label>
+                                    <input type="number" class="form-control" id="valor3" placeholder="valor3">
+                                </div>
+                            </div>
+
+                            <div class="form row">
+                                <div class="form-group col-md-4">
+                                    <label for="valor4 "> valor4 </label>
+                                    <input type="number" class="form-control" id="valor4"
+                                        placeholder="valor4">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=" valor5"> valor5</label>
+                                    <input type="number" class="form-control" id="valor5" placeholder="valor5">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="valor6"> valor6</label>
+                                    <input type="number" class="form-control" id="valor6" placeholder="valor6">
+                                </div>
+                            </div>
+
+                            <div class="form row">
+                                <div class="form-group col-md-4">
+                                    <label for="valor7"> valor7</label>
+                                    <input type="number" class="form-control" id="valor7"
+                                        placeholder="valor7">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="valor8">valor8</label>
+                                    <input type="number" class="form-control" id="valor8"
+                                        placeholder="valor8">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="valor9"> valor9</label>
+                                    <input type="number" class="form-control" id="valor9"
+                                        placeholder="valor9">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for=" valor10"> valor10</label>
+                                    <input type="number" class="form-control" id="valor10" placeholder="valor10">
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for=" valor11">valor11</label>
+                                    <input type="number" class="form-control" id="valor11" placeholder="valor11">
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="valor12 ">valor12</label>
+                                    <input type="number" class="form-control" id="valor12" placeholder="valor12">
+                                </div>
+
+
+                            </div>
+
+                            <div class="form row">
+                                <div class="form-group col-md-4">
+                                    <label for="valor13 "> valor13 </label>
+                                    <input type="number" class="form-control" id="valor13" placeholder="valor13 ">
+                                   
+                                </div>
+                            </div>
+
+                      
+                            <div>
+                                <div class="form row">
+
+                                    <div class="form-group col-md-4">
+                                        <button class="btn btn-success" id="predecir" type="button">Predecir</button>
+
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <button class="btn btn-warning" id="limpiar" type="button">Limpiar</button>   
+
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                    <button class="btn btn-danger" id="inicializar" type="button">Inicializar</button>
+                                    </div>
+
+                                </div>
+                               
+                            </div>
+                            <br>
+                            <div style="text-align: center; height: 50% ; font-weight: bolder; font: size 100px; color:blue;" id="resultado"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <center>
+                            <img src="house price.jpg" alt="" width="450" height="300" srcset="">
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        var modelo = null;
+        const botonPredecir = document.getElementById("predecir");
+        const botonLimpiar = document.getElementById("limpiar");
+        const botonInicializar = document.getElementById("inicializar");
+        const valor1 = document.getElementById("valor1");
+        const valor2 = document.getElementById("valor2");
+        const valor3 = document.getElementById("valor3"); 
+        const valor4 = document.getElementById("valor4");
+        const valor5 = document.getElementById("valor5");
+        const valor6 = document.getElementById("valor6");
+        const valor7 = document.getElementById("valor7");
+        const valor8 = document.getElementById("valor8");
+        const valor9 = document.getElementById("valor9");
+        const valor10 = document.getElementById("valor10");
+        const valor11 = document.getElementById("valor11");
+        const valor12 = document.getElementById("valor12");
+        const valor13 = document.getElementById("valor13");
+
+        (async () => {
+            console.log("Cargando modelo...");
+            modelo = await tf.loadLayersModel("model.json");
+            console.log("Modelo cargado");
+           
+         
+        })();
+
+
+        function limpiar(){
+            valor1.value = 0.0;
+            valor2.value = 0.0;
+            valor3.value = 0.0;
+            valor4.value = 0.0;
+            valor5.value = 0.0;
+            valor6.value = 0.0;
+            valor7.value = 0.0;
+            valor8.value = 0.0;
+            valor9.value = 0.0;
+            valor10.value = 0.0;
+            valor11.value = 0.0;
+            valor12.value = 0.0;
+            valor13.value = 0.0;
+
+        }
+
+        function inicializar(){
+            valor1.value = 3.45;
+            valor2.value = 10.5;
+            valor3.value = 20.3;
+            valor4.value = 0.56;
+            valor5.value = 1.24;
+            valor6.value = 5.7;
+            valor7.value = 34.2;
+            valor8.value = 45.7;
+            valor9.value = 60.4;
+            valor10.value = 45.10;
+            valor11.value = 20.50;
+            valor12.value = 10.30;
+            valor13.value = 40.60;
+
+        }
+        function predecir() {
+            console.log(modelo)
+            if (modelo != null) {
+                console.log("entro en el if")
+                arr = [parseFloat(valor1.value),parseFloat(valor2.value), 
+                parseFloat(valor3.value), parseFloat(valor4.value), parseFloat(valor5.value),
+            parseFloat(valor6.value) , parseFloat(valor7.value) , parseFloat(valor8.value),
+        parseFloat(valor9.value),parseFloat(valor10.value) ,parseFloat(valor11.value),
+    parseFloat(valor12.value) ,parseFloat(valor13.value)]
+            var tensor =tf.tensor(arr,[1,13])
+                var prediccion = modelo.predict(tensor).dataSync();
+                console.log(tensor)
+                console.log("prediccion del modelo")
+                console.log(prediccion)
+                var precio = Math.abs(prediccion);
+                
+                document.getElementById("resultado").innerHTML = "Precio de casa "+" $"+""+precio.toFixed(3);
+        } else {
+          document.getElementById("resultado").innerHTML = "Intenta de nuevo en un momento...";
+        }
+        }
+       botonPredecir.onclick = predecir
+       botonInicializar.onclick = inicializar
+       botonLimpiar.onclick = limpiar
+
+    </script>
+</body>
+
+</html>
